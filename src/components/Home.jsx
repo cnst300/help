@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../style/HomeStyle.css";
 
 function Home() {
@@ -9,10 +10,10 @@ function Home() {
       <h3>Before you start you need to register or login if you already have an account!</h3>
       <br />
       <span className="homeBTNRegister">
-        <a href="/register"></a>
+      <Link to="/register">Register</Link>
       </span>
       <span className="homeBTNLogin">
-        <a href="/login"></a>
+      <Link to="/login">Login</Link>
       </span>
     </div>
   );
