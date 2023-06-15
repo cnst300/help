@@ -15,17 +15,17 @@ const Navbar = () => {
       {auth ? (
         <ul className="navbar-list">
           <li>
-            <Link href="/start">Start</Link>
+            <Link to="/start">Start</Link>
           </li>
           <li>
-            <Link onClick={logout} href="/">
+            <Link onClick={logout} to="/">
               Logout 
               <FontAwesomeIcon icon={faSignOutAlt} />
             </Link>
           </li>
           
           <li>
-            <Link href="/contact">
+            <Link to="/contact">
               Contact
             <FontAwesomeIcon icon={faEnvelope} />
             </Link>
@@ -34,20 +34,20 @@ const Navbar = () => {
       ) : (
         <ul className="navbar-list">
           <li>
-            <Link href="/">Home
+            <Link to="/">Home
             <FontAwesomeIcon icon={faHome} /> 
             </Link>
             
           </li>
           <li>
-            <Link href="/register">Register</Link>
+            <Link to="/register">Register</Link>
           </li>
           <li>
-            <Link href="/login">Login</Link>
+            <Link to="/login">Login</Link>
             <FontAwesomeIcon icon={faSignInAlt} />
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
             <FontAwesomeIcon icon={faEnvelope} />
           </li>
         </ul>
