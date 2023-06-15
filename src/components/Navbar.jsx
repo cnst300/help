@@ -2,6 +2,7 @@ import React from "react";
 import "../style/Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faSignInAlt, faSignOutAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const auth = localStorage.getItem("user");
@@ -14,39 +15,39 @@ const Navbar = () => {
       {auth ? (
         <ul className="navbar-list">
           <li>
-            <a href="/start">Start</a>
+            <Link href="/start">Start</Link>
           </li>
           <li>
-            <a onClick={logout} href="/">
+            <Link onClick={logout} href="/">
               Logout 
               <FontAwesomeIcon icon={faSignOutAlt} />
-            </a>
+            </Link>
           </li>
           
           <li>
-            <a href="/contact">
+            <Link href="/contact">
               Contact
             <FontAwesomeIcon icon={faEnvelope} />
-            </a>
+            </Link>
           </li>
         </ul>
       ) : (
         <ul className="navbar-list">
           <li>
-            <a href="/">Home
+            <Link href="/">Home
             <FontAwesomeIcon icon={faHome} /> 
-            </a>
+            </Link>
             
           </li>
           <li>
-            <a href="/register">Register</a>
+            <Link href="/register">Register</Link>
           </li>
           <li>
-            <a href="/login">Login</a>
+            <Link href="/login">Login</Link>
             <FontAwesomeIcon icon={faSignInAlt} />
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link href="/contact">Contact</Link>
             <FontAwesomeIcon icon={faEnvelope} />
           </li>
         </ul>
