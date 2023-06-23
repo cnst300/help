@@ -4,20 +4,25 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Start from "./components/Start";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Router basename="/help">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/start" element={<Start />} />
-        </Routes>
-      </Router>
-      </>
+      <ErrorBoundary>
+        <Navbar />
+        <Router basename="/">
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/start" element={<Start />} />
+            </Routes>
+          </ErrorBoundary>
+        </Router>
+      </ErrorBoundary>
+    </>
   );
 };
 
